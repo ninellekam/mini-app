@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 16px;
+            background-color: var(--tg-theme-bg-color, #fff);
+            color: var(--tg-theme-text-color, #000);
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .button {
+            background-color: var(--tg-theme-button-color, #3390ec);
+            color: var(--tg-theme-button-text-color, #fff);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            width: 100%;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+        .photo-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin: 16px 0;
+        }
+        .photo-placeholder {
+            aspect-ratio: 1;
+            background-color: var(--tg-theme-secondary-bg-color, #f0f0f0);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid var(--tg-theme-hint-color, #999);
+            border-radius: 8px;
+            background: var(--tg-theme-bg-color, #fff);
+            color: var(--tg-theme-text-color, #000);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Генератор фотосессий</h2>
+
+        <div class="photo-container" id="photoContainer">
+            <div class="photo-placeholder">+</div>
+            <div class="photo-placeholder">+</div>
+            <div class="photo-placeholder">+</div>
+        </div>
+
+        <input type="text" class="input-field" id="locationInput" placeholder="Введите локацию" style="display: none;">
+
+        <button class="button" id="uploadButton">Загрузить фотографии</button>
+        <button class="button" id="generateButton" style="display: none;">Сгенерировать</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
